@@ -1,0 +1,7 @@
+country_sui_no = data.groupby(['country']).suicides_no.sum()
+country_sui_no_sort = country_sui_no.sort_values()
+country_pop = data.groupby(['country']).population.sum()
+country_sui_rate = country_sui_no/country_pop*100000
+fig,axes = plt.subplots(1,2,figsize = (20,40))
+country_sui_no_sort.plot(kind = 'barh',ax = axes[0],title = 'Total count of suicides for countries')
+country_sui_rate.sort_values().plot(kind = 'barh',ax = axes[1],title = 'Suicides rate for countries')
