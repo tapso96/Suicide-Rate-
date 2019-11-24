@@ -1,0 +1,8 @@
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(15,8))
+ax = fig.add_subplot(1, 1, 1)
+ax.plot(data.groupby(['year']).suicides_no.sum(),'ko--')
+tick = ax.set_xticks(range(1985,2018,2))
+ax.set_title('The total count of suicides  from 1985 to 2016')
+ax.set_xlabel('year')
+ax.set_ylabel('suicide number')
