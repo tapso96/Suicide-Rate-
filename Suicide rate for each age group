@@ -1,0 +1,4 @@
+
+age_group = pd.pivot_table(data,index=['year'],values='suicides_no',columns=['age'],aggfunc=np.sum) #call the year & suicide no
+sui_age=age_group[['5-14 years','15-24 years', '25-34 years', '35-54 years','55-74 years', '75+ years']] #distribute in different ages
+sui_age.plot(kind = 'bar',figsize=(10,6),stacked=True,title='How each age groups contribute to the count of suicides')
