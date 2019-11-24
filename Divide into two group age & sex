@@ -1,0 +1,5 @@
+
+group1=data.groupby(['age','sex'],as_index = False).suicides_no.sum()
+group1['percent']=round(group1.suicides_no/group1.suicides_no.sum()*100,2)
+group1['sex and percent'] = group1.sex + ' ' + group1.percent.apply(str) +'%'
+group1
