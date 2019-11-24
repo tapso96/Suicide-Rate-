@@ -1,0 +1,3 @@
+import matplotlib.pyplot as plt
+data.hist(figsize=(20,20))
+plt.show()
